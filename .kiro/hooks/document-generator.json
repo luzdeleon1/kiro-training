@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Document generator",
+      "trigger": "PostFileSave",
+      "action": {
+        "type": "agent",
+        "prompt": "Generate comprehensive documentation for the current file:\n1. Extract function and class signatures\n2. Document parameters and return types\n3. Provide usage examples based on existing code\n4. Update the README.md with any new exports\n5. Ensure documentation follows project standards"
+      },
+      "description": "Updates README.md file based on the contents  of the current source code file",
+      "matcher": "src/.*\\.(js|ts|tsx|)$",
+      "enabled": true
+    }
+  ]
+}
